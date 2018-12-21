@@ -1,6 +1,6 @@
 # Decentralized Star Notary
 
-#Project Details
+# Project Details
 DApp notary service leveraging the Ethereum platform. 
 The smart contract  offer securely prove of existence for any digital asset  is authentic and can be trusted - in this case unique stars and their metadata.  
 Also prove ownership of the digital asset if that information is provided.
