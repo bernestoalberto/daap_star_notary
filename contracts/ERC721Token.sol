@@ -1,8 +1,8 @@
-pragma solidity ^0.4.24; 
+pragma solidity ^ 0.4.24; 
 
-import './ERC721.sol';
+import "./ERC721.sol";
 
-contract ERC721Token is ERC721 {
+  contract ERC721Token is ERC721 {
 
     mapping(uint256 => address) tokenToOwner; 
     mapping(address => uint256) ownerToBalance; 
