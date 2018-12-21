@@ -1,0 +1,33 @@
+{
+  "name": "daap_star_notary",
+  "version": "1.0.0",
+  "description": "My Udacity Daap project",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "daap_star_notary"
+  },
+  "keywords": [
+    "daa",
+    "blockchain",
+    "smart",
+    "contract",
+    "solidity"
+  ],
+  "author": "bernestoalberto",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^1.18.9",
+    "npm": "^6.5.0",
+    "openzeppelin-solidity": "^2.0.0",
+    "truffle": "^4.1.14",
+    "truffle-hdwallet-provider": "^1.0.0",
+    "web3": "^1.0.0-beta.37"
+  }
+}
