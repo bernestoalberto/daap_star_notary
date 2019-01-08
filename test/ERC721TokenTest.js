@@ -19,13 +19,11 @@ contract('ERC721Token', accounts => {
         })
 
         it('ownerOf tokenId is user1', async function () { 
-            assert.equal(await this.contract.ownerOf(tokenId), user1)
+            //Add your logic here
         })
 
         it('balanceOf user1 is incremented by 1', async function () { 
-            let balance = await this.contract.balanceOf(user1)
-
-            assert.equal(balance.toNumber(), 1)
+           // Add your logic here
         })
 
         it('emits the correct event during creation of a new token', async function () { 
@@ -44,20 +42,15 @@ contract('ERC721Token', accounts => {
         })
 
         it('token has new owner', async function () { 
-            assert.equal(await this.contract.ownerOf(tokenId), user2)
+            // Add your logic here
         })
 
         it('emits the correct event', async function () { 
-            assert.equal(tx.logs[0].event, 'Transfer')
-            assert.equal(tx.logs[0].args._tokenId, tokenId)
-            assert.equal(tx.logs[0].args._to, user2)
-            assert.equal(tx.logs[0].args._from, user1)
+            // Add your logic here
         })
 
         it('only permissioned users can transfer tokens', async function() { 
-            let randomPersonTryingToStealTokens = accounts[4]
-
-            await expectThrow(this.contract.transferFrom(user1, randomPersonTryingToStealTokens, tokenId, {from: randomPersonTryingToStealTokens}))
+            // Add your logic here
         })
     })
 
@@ -71,17 +64,15 @@ contract('ERC721Token', accounts => {
         })
 
         it('set user2 as an approved address', async function () { 
-            assert.equal(await this.contract.getApproved(tokenId), user2)
+            //Add your logic here
         })
 
         it('user2 can now transfer', async function () { 
-            await this.contract.transferFrom(user1, user2, tokenId, {from: user2})
-
-            assert.equal(await this.contract.ownerOf(tokenId), user2)
+            // Add your logic here
         })
 
         it('emits the correct event', async function () { 
-            assert.equal(tx.logs[0].event, 'Approval')
+            // Add your logic here
         })
     })
 
@@ -96,7 +87,7 @@ contract('ERC721Token', accounts => {
         })
 
         it('can set an operator', async function () { 
-            assert.equal(await this.contract.isApprovedForAll(user1, operator), true)
+           // Add your logic here
         })
     })
 })
