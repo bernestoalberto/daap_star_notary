@@ -10,6 +10,9 @@ contract StarNotary is ERC721 {
         string dec;
         string mag;
     }
+//   string public constant name =  "ErnestoBToken";
+//   string public constant symbol = "EBM";
+//   uint8 public  constant decimals = 18;
 
     mapping(uint256 => Star) public tokenIdToStarInfo; 
     mapping(uint256 => uint256) public starsForSale;
@@ -21,9 +24,12 @@ contract StarNotary is ERC721 {
         tokenIdToStarInfo[_tokenId] = newStar;
         _mint(msg.sender, _tokenId);
     }
-    
+    function lookUptokenIdToStarInfo(uint256 _tokenId) public view returns(string name){
+         string name = tokenIdStarInfo[_tokenId].name;
+         return name;
+    }
     function putStarUpForSale(uint256 _tokenId, uint256 _price) public { 
-        require(this.ownerOf(_tokenId) == msg.sender);
+        require(ownerOf(_tokenId) == msg.sender);
 
         starsForSale[_tokenId] = _price;
     }
@@ -43,5 +49,13 @@ contract StarNotary is ERC721 {
         if(msg.value > starCost) { 
             msg.sender.transfer(msg.value - starCost);
         }
+    }
+
+    function exchangeStars(){
+
+    }
+
+    function transferStar(uint256 address, uint256 _tokenId){
+
     }
 }
