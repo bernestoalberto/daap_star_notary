@@ -1,61 +1,112 @@
-pragma solidity ^0.4.24;
-import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
+    pragma solidity ^0.4.24;
+    import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
 
-contract StarNotary is ERC721 { 
+    contract StarNotary is ERC721 { 
 
-    struct Star { 
-        string name; 
-        string starStory;
-        string ra;
-        string dec;
-        string mag;
-    }
-//   string public constant name =  "ErnestoBToken";
-//   string public constant symbol = "EBM";
-//   uint8 public  constant decimals = 18;
+        struct Star { 
+            string name; 
+            string ra;
+            string dec;
+            string mag;
+            string story;
+        }
+       
+       string public constant name =  "ErnestoBMToken";
+       string public constant symbol = "EBM";
+       uint8 public constant decimals = 18;
 
-    mapping(uint256 => Star) public tokenIdToStarInfo; 
-    mapping(uint256 => uint256) public starsForSale;
+        mapping (uint256 => Star) public tokenIdToStarInfo; 
+        mapping (uint256 => uint256) public starsForSale;
 
-    function createStar(string _name, string _starStory, string _ra, string _dec, string _mag, uint256 _tokenId) public { 
-        Star memory   newStar = Star(_name, _starStory, _ra, _dec, _mag);
-        Star memory  star = tokenIdToStarInfo[_tokenId];
-       require(keccak256(abi.encodePacked(star.ra, star.dec, star.mag)) == keccak256(abi.encodePacked(newStar.ra, newStar.dec, newStar.mag)));
+        function createStar(string named, string dec, string mag, string cent, string story, uint256 _tokenId) public {
+        Star memory newStar = Star(named, dec, mag, cent, story);
+        // uint256 tokenId = stars.push(newStar) - 1;
         tokenIdToStarInfo[_tokenId] = newStar;
         _mint(msg.sender, _tokenId);
+        // return tokenId;
+        }
+
+        function getTokeName() public view  returns(string ) {
+        return name;
+        }
+
+        function GetSymbolName() public view returns (string ) {
+         return symbol;
+        }
+
+       /* function decimals() public view returns (uint8){
+
+        }*/
+
+        function putStarUpForSale(uint256 _tokenId, uint256 _price) public { 
+            require(ownerOf(_tokenId) == msg.sender);
+
+            starsForSale[_tokenId] = _price;
+        }
+
+        function buyStar(uint256 _tokenId) public payable { 
+            require(starsForSale[_tokenId] > 0);
+
+            uint256 starCost = starsForSale[_tokenId];
+            address starOwner = ownerOf(_tokenId);
+            require(msg.value >= starCost);
+
+            _removeTokenFrom(starOwner, _tokenId);
+            _addTokenTo(msg.sender, _tokenId);
+
+            starOwner.transfer(starCost);
+
+            if(msg.value > starCost) { 
+                msg.sender.transfer(msg.value - starCost);
+            }
+        }
+
+    /*
+    *
+    @dev Looks up the stars using the Token ID
+    *
+    @param uint256 _tokenId 
+    *
+    @return a name star
+    *
+    */
+
+    function lookUptokenIdToStarInfo(uint256 _tokenId) public view returns(string) {
+        string storage named = tokenIdToStarInfo[_tokenId].name;
+        return named;
     }
-    function lookUptokenIdToStarInfo(uint256 _tokenId) public view returns(string name){
-         string name = tokenIdStarInfo[_tokenId].name;
-         return name;
-    }
-    function putStarUpForSale(uint256 _tokenId, uint256 _price) public { 
-        require(ownerOf(_tokenId) == msg.sender);
 
-        starsForSale[_tokenId] = _price;
-    }
 
-    function buyStar(uint256 _tokenId) public payable { 
-        require(starsForSale[_tokenId] > 0);
+    /*
+    * @description 2 users can exchange their stars tokens
+    * @param _tokenId 
+    * @param  _tokenId1
+    **
+    */
+        function exchangeStars(uint256 _tokenId, uint256 _tokenId1) {
+            address owner = ownerOf(_tokenId);
+            address owner1 = ownerOf(_tokenId1);
+            
+            _removeTokenFrom(owner, _tokenId);
+            _removeTokenFrom(owner1, _tokenId1);
 
-        uint256 starCost = starsForSale[_tokenId];
-        address starOwner = this.ownerOf(_tokenId);
-        require(msg.value >= starCost);
+            _addTokenTo(owner,_tokenId1);
+            _addTokenTo(owner1, _tokenId);
 
-        _removeTokenFrom(starOwner, _tokenId);
-        _addTokenTo(msg.sender, _tokenId);
+        }
+    /*
+    *@dev Transfer a star from the address of the caller
+    *
+    **@param uint256 address the address to transfer the star to
+    *@param  uint256 _tokenId  token ID of the star
+    **
+    */
+        function transferStar(address addressReceiver, uint256 _tokenId){
+        
+        address sender = ownerOf(_tokenId);
+        _removeTokenFrom(sender, _tokenId);
+        _addTokenTo(addressReceiver, _tokenId);
+        transferFrom(sender, addressReceiver, _tokenId);
 
-        starOwner.transfer(starCost);
-
-        if(msg.value > starCost) { 
-            msg.sender.transfer(msg.value - starCost);
         }
     }
-
-    function exchangeStars(){
-
-    }
-
-    function transferStar(uint256 address, uint256 _tokenId){
-
-    }
-}
