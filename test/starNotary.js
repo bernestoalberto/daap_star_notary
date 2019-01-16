@@ -26,8 +26,8 @@ contract('StarNotary', async (accs) => {
     });
   });
   it('has a correct name and token symbol are added properly.', async() => {
-    let name = 'EBToken'; 
-    let symbol = 'EBT'; 
+    let name = 'ErnestoBMToken'; 
+    let symbol = 'EBM'; 
     assert.equal( await instance.getTokenName(), name)
     assert.equal( await instance.getTokenName(), symbol)
   });

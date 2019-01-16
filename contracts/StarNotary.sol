@@ -11,7 +11,7 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
             string story;
         }
        
-       string public  name =  "ErnestoBMToken";
+       string public  named =  "ErnestoBMToken";
        string public  symbol = "EBM";
        uint8 public  decimals = 18;
 
@@ -24,8 +24,8 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
         _mint(msg.sender, _tokenId);
         }
 
-        function getTokeName() public view  returns(string ) {
-        return name;
+        function getTokenName() public view  returns(string ) {
+        return named;
         }
 
         function GetSymbolName() public view returns (string ) {
