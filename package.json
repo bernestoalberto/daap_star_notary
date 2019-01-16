@@ -48,7 +48,7 @@
     "sass-loader": "^7.0.3",
     "source-map-support": "^0.5.3",
     "style-loader": "^0.21.0",
-    "truffle": "^4.1.13",
+    "truffle": "^4.1.15",
     "truffle-contract": "^3.0.6",
     "web3": "^0.20.0",
     "webpack": "^4.12.0",
@@ -61,7 +61,6 @@
     "nodemon": "^1.18.9",
     "npm": "^6.5.0",
     "openzeppelin-solidity": "^2.0.0",
-    "truffle": "^4.1.15",
     "truffle-hdwallet-provider": "^1.0.0"
   }
 }

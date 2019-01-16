@@ -1,5 +1,5 @@
-    pragma solidity ^0.4.24;
-    import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
+pragma solidity ^0.4.24;
+import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
 
     contract StarNotary is ERC721 { 
 
@@ -11,19 +11,17 @@
             string story;
         }
        
-       string public constant name =  "ErnestoBMToken";
-       string public constant symbol = "EBM";
-       uint8 public constant decimals = 18;
+       string public  name =  "ErnestoBMToken";
+       string public  symbol = "EBM";
+       uint8 public  decimals = 18;
 
         mapping (uint256 => Star) public tokenIdToStarInfo; 
         mapping (uint256 => uint256) public starsForSale;
 
         function createStar(string named, string dec, string mag, string cent, string story, uint256 _tokenId) public {
         Star memory newStar = Star(named, dec, mag, cent, story);
-        // uint256 tokenId = stars.push(newStar) - 1;
         tokenIdToStarInfo[_tokenId] = newStar;
         _mint(msg.sender, _tokenId);
-        // return tokenId;
         }
 
         function getTokeName() public view  returns(string ) {
@@ -34,10 +32,7 @@
          return symbol;
         }
 
-       /* function decimals() public view returns (uint8){
-
-        }*/
-
+  
         function putStarUpForSale(uint256 _tokenId, uint256 _price) public { 
             require(ownerOf(_tokenId) == msg.sender);
 
@@ -90,7 +85,7 @@
             _removeTokenFrom(owner, _tokenId);
             _removeTokenFrom(owner1, _tokenId1);
 
-            _addTokenTo(owner,_tokenId1);
+            _addTokenTo(owner, _tokenId1);
             _addTokenTo(owner1, _tokenId);
 
         }
@@ -104,9 +99,9 @@
         function transferStar(address addressReceiver, uint256 _tokenId){
         
         address sender = ownerOf(_tokenId);
-        _removeTokenFrom(sender, _tokenId);
+       _removeTokenFrom(sender, _tokenId);
         _addTokenTo(addressReceiver, _tokenId);
-        transferFrom(sender, addressReceiver, _tokenId);
+        // _removeTokenFrom(sender, addressReceiver, _tokenId);
 
         }
     }

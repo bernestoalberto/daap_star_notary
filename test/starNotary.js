@@ -46,7 +46,7 @@ contract('StarNotary', async (accs) => {
     assert.equal(await instance.ownerOf.call(token), receiver)
   });
 
-  it('can be claimed', async () => {
+ /* it('can be claimed', async () => {
     await instance.claimStar({from: owner});
     assert.equal(await instance.starOwner.call(), owner)
   })
@@ -104,5 +104,5 @@ contract('StarNotary', async (accs) => {
      await instance.buyStar(starId, {from: user2, value: starPrice, gasPrice:0})
      const balanceAfterUser2BuysStar = web3.eth.getBalance(user2)
      assert.equal(balanceOfUser2BeforeTransaction.sub(balanceAfterUser2BuysStar), starPrice);
-   });
+   });*/
 
