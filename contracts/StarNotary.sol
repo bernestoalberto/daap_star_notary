@@ -13,13 +13,12 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
        
        string public  named =  "ErnestoBMToken";
        string public  symbol = "EBM";
-       uint8 public  decimals = 18;
 
         mapping (uint256 => Star) public tokenIdToStarInfo; 
         mapping (uint256 => uint256) public starsForSale;
 
-        function createStar(string named, string dec, string mag, string cent, string story, uint256 _tokenId) public {
-        Star memory newStar = Star(named, dec, mag, cent, story);
+        function createStar(string na, string dec, string mag, string cent, string story, uint256 _tokenId) public {
+        Star memory newStar = Star(na, dec, mag, cent, story);
         tokenIdToStarInfo[_tokenId] = newStar;
         _mint(msg.sender, _tokenId);
         }
@@ -28,7 +27,7 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
         return named;
         }
 
-        function GetSymbolName() public view returns (string ) {
+         function getSymbolName() public view returns (string ) {
          return symbol;
         }
 
@@ -67,8 +66,8 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
     */
 
     function lookUptokenIdToStarInfo(uint256 _tokenId) public view returns(string) {
-        string storage named = tokenIdToStarInfo[_tokenId].name;
-        return named;
+        string storage nam = tokenIdToStarInfo[_tokenId].name;
+        return nam;
     }
 
 
@@ -78,7 +77,7 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
     * @param  _tokenId1
     **
     */
-        function exchangeStars(uint256 _tokenId, uint256 _tokenId1) {
+        function exchangeStars(uint256 _tokenId, uint256 _tokenId1)public  {
             address owner = ownerOf(_tokenId);
             address owner1 = ownerOf(_tokenId1);
             
@@ -96,10 +95,10 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
     *@param  uint256 _tokenId  token ID of the star
     **
     */
-        function transferStar(address addressReceiver, uint256 _tokenId){
+        function transferStar(address addressReceiver, uint256 _tokenId) public  {
         
         address sender = ownerOf(_tokenId);
-       _removeTokenFrom(sender, _tokenId);
+        _removeTokenFrom(sender, _tokenId);
         _addTokenTo(addressReceiver, _tokenId);
         // _removeTokenFrom(sender, addressReceiver, _tokenId);
 

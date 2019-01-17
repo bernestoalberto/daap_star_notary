@@ -17,9 +17,9 @@ contract('StarNotary', async (accs) => {
 
   it('can Create a Star', async() => {
     let tokenId = 1;
-     instance.createStar.call('awesome star!', 'dec', 'mag', 'cent', 'story')//, {from: accounts[0]})
+     instance.createStar.call('awesome star!', 'dec', 'mag', 'cent', 'story',tokenId)//, {from: accounts[0]})
     .then((result) => {
-        tokenId = result.toNumber();
+        // tokenId = result.toNumber();
         console.log('The token is', tokenId, result);
     }).catch((err) => {
         console.log(err);
@@ -28,8 +28,8 @@ contract('StarNotary', async (accs) => {
   it('has a correct name and token symbol are added properly.', async() => {
     let name = 'ErnestoBMToken'; 
     let symbol = 'EBM'; 
-    assert.equal( await instance.getTokenName(), name)
-    assert.equal( await instance.getTokenName(), symbol)
+    assert.equal( await instance.getTokenName(), name);
+    assert.equal( await instance.getSymbolName(), symbol);
   });
   it('2 users can exchange their stars',async ()=>{
     let tokenId= 1;
@@ -46,7 +46,7 @@ contract('StarNotary', async (accs) => {
     assert.equal(await instance.ownerOf.call(token), receiver)
   });
 
- /* it('can be claimed', async () => {
+  it('can be claimed', async () => {
     await instance.claimStar({from: owner});
     assert.equal(await instance.starOwner.call(), owner)
   })
@@ -104,5 +104,5 @@ contract('StarNotary', async (accs) => {
      await instance.buyStar(starId, {from: user2, value: starPrice, gasPrice:0})
      const balanceAfterUser2BuysStar = web3.eth.getBalance(user2)
      assert.equal(balanceOfUser2BeforeTransaction.sub(balanceAfterUser2BuysStar), starPrice);
-   });*/
+   });
 
