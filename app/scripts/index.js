@@ -21,7 +21,12 @@ const createStar = async () => {
   const instance = await StarNotary.deployed();
   const name = document.getElementById("starName").value;
   const id = document.getElementById("starId").value;
-  await instance.createStar(name, id, {from: account});
+ let  ra = "16h 29m 1.0s";
+  let dec = "68° 52' 56.9";
+  let mag = "4.83";
+  let cent = "";
+  let story = "Found star using https://www.google.com/sky/";
+  await instance.createStar(name, ra, dec,  mag,  cent,  story,id, {from: account});
   App.setStatus("New Star Owner is " + account + ".");
 }
 

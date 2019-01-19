@@ -17,7 +17,7 @@ contract('StarNotary', async (accs) => {
 
   it('can Create a Star', async() => {
     let tokenId = 1;
-     instance.createStar.call('awesome star!', 'dec', 'mag', 'cent', 'story',tokenId)//, {from: accounts[0]})
+     instance.createStar.call('awesome star!', 'dec', 'mag', 'cent', 'story',tokenId, {from: owner})//, {from: accounts[0]})
     .then((result) => {
         // tokenId = result.toNumber();
         console.log('The token is', tokenId, result);
@@ -60,9 +60,13 @@ contract('StarNotary', async (accs) => {
   it('lets user1 put up their star for sale', async() => {
     let user1 = accounts[1]
      let starId = 2;
-     let starPrice = web3.toWei(.01, "ether")
-     await  instance.createStar.call('awesome star!', 'dec', 'mag', 'cent', 'story', {from: user1})
-    //  await instance.createStar('awesome star', starId, {from: user1})
+     let starPrice = web3.toWei(.01, "ether");
+     let  ra = "16h 29m 1.0s";
+     let dec = "68° 52' 56.9";
+     let mag = "4.83";
+     let cent = "";
+     let story = "Found star using https://www.google.com/sky/";
+     await instance.createStar.call(name, ra, dec,  mag,  cent,  story,starId, {from: user1});
      await instance.putStarUpForSale(starId, starPrice, {from: user1})
      assert.equal(await instance.starsForSale.call(starId), starPrice)
    });
@@ -71,8 +75,13 @@ contract('StarNotary', async (accs) => {
     let user1 = accounts[1]
     let user2 = accounts[2]
     let starId = 3
-    let starPrice = web3.toWei(.01, "ether")
-    await  instance.createStar.call('awesome star!', 'dec', 'mag', 'cent', 'story', {from: user1})
+    let starPrice = web3.toWei(.01, "ether");
+    let  ra = "16h 29m 1.0s";
+    let dec = "68° 52' 56.9";
+    let mag = "4.83";
+    let cent = "";
+    let story = "Found star using https://www.google.com/sky/";
+    await instance.createStar.call(name, ra, dec,  mag,  cent,  story,starId, {from: user1});
     await instance.putStarUpForSale(starId, starPrice, {from: user1})
     let balanceOfUser1BeforeTransaction = web3.eth.getBalance(user1)
     await instance.buyStar(starId, {from: user2, value: starPrice})
@@ -81,11 +90,15 @@ contract('StarNotary', async (accs) => {
   });
 
   it('lets user2 buy a star, if it is put up for sale', async() => {
-    let user1 = accounts[1]
-    let user2 = accounts[2]
-    let starId = 4
+    let user1 = accounts[1];
+    let user2 = accounts[2];
+    let starId = 4;
+    let  ra = "16h 29m 1.0s";
+    let dec = "68° 52' 56.9";
+    let mag = "4.83";
+    let cent = "";
     let starPrice = web3.toWei(.01, "ether")
-    await  instance.createStar.call('awesome star!', 'dec', 'mag', 'cent', 'story', {from: user1})
+    await instance.createStar.call(name, ra, dec,  mag,  cent,  story,starId, {from: user1});
     await instance.putStarUpForSale(starId, starPrice, {from: user1})
     let balanceOfUser1BeforeTransaction = web3.eth.getBalance(user2)
     await instance.buyStar(starId, {from: user2, value: starPrice});
@@ -96,8 +109,13 @@ contract('StarNotary', async (accs) => {
      let user1 = accounts[1]
      let user2 = accounts[2]
      let starId = 5
+     let starPrice = web3.toWei(.01, "ether");
+     let  ra = "16h 29m 1.0s";
+     let dec = "68° 52' 56.9";
+     let mag = "4.83";
+     let cent = "";
      let starPrice = web3.toWei(.01, "ether")
-     await  instance.createStar.call('awesome star!', 'dec', 'mag', 'cent', 'story', {from: user1})
+     await instance.createStar.call(name, ra, dec,  mag,  cent,  story,starId, {from: user1});
      await instance.putStarUpForSale(starId, starPrice, {from: user1})
     let balanceOfUser1BeforeTransaction = web3.eth.getBalance(user2)
      const balanceOfUser2BeforeTransaction = web3.eth.getBalance(user2)

@@ -4,27 +4,29 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
     contract StarNotary is ERC721 { 
 
         struct Star { 
-            string name; 
+            string named; 
             string ra;
             string dec;
             string mag;
+            string cen;
             string story;
+   
         }
        
-       string public  named =  "ErnestoBMToken";
+       string public  name =  "ErnestoBMToken";
        string public  symbol = "EBM";
 
         mapping (uint256 => Star) public tokenIdToStarInfo; 
         mapping (uint256 => uint256) public starsForSale;
 
-        function createStar(string na, string dec, string mag, string cent, string story, uint256 _tokenId) public {
+        function createStar(string na, string ra, string dec, string mag, string cent, string story, uint256 _tokenId) public {
         Star memory newStar = Star(na, dec, mag, cent, story);
         tokenIdToStarInfo[_tokenId] = newStar;
         _mint(msg.sender, _tokenId);
         }
 
         function getTokenName() public view  returns(string ) {
-        return named;
+        return name;
         }
 
          function getSymbolName() public view returns (string ) {
@@ -66,7 +68,7 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
     */
 
     function lookUptokenIdToStarInfo(uint256 _tokenId) public view returns(string) {
-        string storage nam = tokenIdToStarInfo[_tokenId].name;
+        string storage nam = tokenIdToStarInfo[_tokenId].named;
         return nam;
     }
 
@@ -104,3 +106,4 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
 
         }
     }
+ 
