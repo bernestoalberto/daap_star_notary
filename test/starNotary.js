@@ -35,6 +35,13 @@ contract('StarNotary', async (accs) => {
     let tokenId= 1;
     let tokenId1 = 2;
     let owner1 = instance.ownerOf(tokenId1);
+    let na = 'Pluton';
+    let  ra = "16h 29m 1.0s";
+    let dec = "68° 52' 56.9";
+    let mag = "4.83";
+    let cent = "";
+    let story = "Found star using https://www.google.com/sky/";
+    await instance.createStar.call(na, ra, dec,  mag,  cent,  story,tokenId1, {from: user1});
     await instance.exchangeStars(tokenId, tokenId1)
     assert.equal(await instance.ownerOf.call(tokenId),owner1 )
   });
@@ -114,7 +121,6 @@ contract('StarNotary', async (accs) => {
      let dec = "68° 52' 56.9";
      let mag = "4.83";
      let cent = "";
-     let starPrice = web3.toWei(.01, "ether")
      await instance.createStar.call(name, ra, dec,  mag,  cent,  story,starId, {from: user1});
      await instance.putStarUpForSale(starId, starPrice, {from: user1})
     let balanceOfUser1BeforeTransaction = web3.eth.getBalance(user2)
