@@ -13,14 +13,14 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
    
         }
        
-       string public  name =  "ErnestoBMToken";
+       string public  name =  "ErnestoBM Token";
        string public  symbol = "EBM";
 
         mapping (uint256 => Star) public tokenIdToStarInfo; 
         mapping (uint256 => uint256) public starsForSale;
 
         function createStar(string na, string ra, string dec, string mag, string cent, string story, uint256 _tokenId) public {
-        Star memory newStar = Star(na, dec, mag, cent, story);
+        Star memory newStar = Star(na, ra, dec, mag, cent, story);
         tokenIdToStarInfo[_tokenId] = newStar;
         _mint(msg.sender, _tokenId);
         }
@@ -68,6 +68,7 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
     */
 
     function lookUptokenIdToStarInfo(uint256 _tokenId) public view returns(string) {
+        require(ownerOf(_tokenId) == msg.sender);
         string storage nam = tokenIdToStarInfo[_tokenId].named;
         return nam;
     }
