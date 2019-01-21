@@ -1,21 +1,20 @@
 // Import the page's CSS. Webpack will know what to do with it.
-import '../styles/app.css'
+import '../styles/app.css';
 
 // Import libraries we need.
-import { default as Web3 } from 'web3'
-import { default as contract } from 'truffle-contract'
+import { default as Web3 } from 'web3';
+import { default as contract } from 'truffle-contract';
 
 // Import our contract artifacts and turn them into usable abstractions.
-import StarNotaryArtifact from '../../build/contracts/StarNotary.json'
+import StarNotaryArtifact from '../../build/contracts/StarNotary.json';
 
 // StarNotary is our usable abstraction, which we'll use through the code below.
-const StarNotary = contract(StarNotaryArtifact)
-
+const StarNotary = contract(StarNotaryArtifact);
 // The following code is simple to show off interacting with your contracts.
 // As your needs grow you will likely need to change its form and structure.
 // For application bootstrapping, check out window.addEventListener below.
-let accounts
-let account
+let accounts;
+let account;
 
 const createStar = async () => {
   const instance = await StarNotary.deployed();
@@ -48,7 +47,7 @@ const App = {
     StarNotary.setProvider(web3.currentProvider)
 
     // Get the initial account balance so it can be displayed.
-    web3.eth.getAccounts(function (err, accs) {
+    web3.eth.getAccounts(function (err, accs) { 
       if (err != null) {
         alert('There was an error fetching your accounts.')
         return
@@ -102,10 +101,10 @@ window.addEventListener('load', function () {
       ' You should remove this fallback when you deploy live, as it\'s inherently insecure.' +
       ' Consider switching to Metamask for development.' +
       ' More info here: http://truffleframework.com/tutorials/truffle-and-metamask'
-    )
+    );
     // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
-    window.web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'))
+    window.web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545'));
   }
 
-  App.start()
+  App.start();
 })

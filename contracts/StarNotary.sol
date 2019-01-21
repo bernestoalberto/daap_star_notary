@@ -13,8 +13,8 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
    
         }
        
-       string public  name =  "ErnestoBM Token";
-       string public  symbol = "EBM";
+       string public constant  name =  "ErnestoBM Token";
+       string public constant  symbol = "EBM";
 
         mapping (uint256 => Star) public tokenIdToStarInfo; 
         mapping (uint256 => uint256) public starsForSale;
@@ -25,11 +25,11 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
         _mint(msg.sender, _tokenId);
         }
 
-        function getTokenName() public view  returns(string ) {
+        function getTokenName() public pure  returns(string ) {
         return name;
         }
 
-         function getSymbolName() public view returns (string ) {
+         function getSymbolName() public pure returns (string ) {
          return symbol;
         }
 
