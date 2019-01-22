@@ -1,35 +1,35 @@
 pragma solidity ^0.4.24;
 import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
 
-    contract StarNotary is ERC721 { 
+contract StarNotary is ERC721 { 
 
-        struct Star { 
-            string name; 
-            string ra;
-            string dec;
-            string mag;
-            string story;
+    struct Star { 
+        string named; 
+        string ra;
+        string dec;
+        string mag;
+        string cen;
+        string story;
         }
        
-       string public  named =  "ErnestoBMToken";
-       string public  symbol = "EBM";
-       uint8 public  decimals = 18;
+       string public constant  NAME =  "ErnestoBM Token";
+       string public constant  SYMBOL = "EBM";
 
         mapping (uint256 => Star) public tokenIdToStarInfo; 
         mapping (uint256 => uint256) public starsForSale;
 
-        function createStar(string named, string dec, string mag, string cent, string story, uint256 _tokenId) public {
-        Star memory newStar = Star(named, dec, mag, cent, story);
+        function createStar(string _name, string _ra, string _dec, string _mag, string _cent, string _story, uint256 _tokenId) public {
+        Star memory newStar = Star(_name, _ra, _dec, _mag, _cent, _story);
         tokenIdToStarInfo[_tokenId] = newStar;
         _mint(msg.sender, _tokenId);
         }
 
-        function getTokenName() public view  returns(string ) {
-        return named;
+        function getTokenName() public pure  returns(string ) {
+        return NAME;
         }
 
-        function GetSymbolName() public view returns (string ) {
-         return symbol;
+         function getSymbolName() public pure returns (string ) {
+         return SYMBOL;
         }
 
   
@@ -67,8 +67,9 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
     */
 
     function lookUptokenIdToStarInfo(uint256 _tokenId) public view returns(string) {
-        string storage named = tokenIdToStarInfo[_tokenId].name;
-        return named;
+        require(ownerOf(_tokenId) == msg.sender);
+        string storage nam = tokenIdToStarInfo[_tokenId].named;
+        return nam;
     }
 
 
@@ -78,15 +79,18 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
     * @param  _tokenId1
     **
     */
-        function exchangeStars(uint256 _tokenId, uint256 _tokenId1) {
+        function exchangeStars(uint256 _tokenId, uint256 _tokenId1) public {
             address owner = ownerOf(_tokenId);
             address owner1 = ownerOf(_tokenId1);
             
             _removeTokenFrom(owner, _tokenId);
             _removeTokenFrom(owner1, _tokenId1);
 
-            _addTokenTo(owner, _tokenId1);
-            _addTokenTo(owner1, _tokenId);
+            // _addTokenTo(owner, _tokenId1);
+            // _addTokenTo(owner1, _tokenId);
+
+        transferFrom(owner, owner1, _tokenId);
+        transferFrom(owner1, owner, _tokenId1);
 
         }
     /*
@@ -96,12 +100,13 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
     *@param  uint256 _tokenId  token ID of the star
     **
     */
-        function transferStar(address addressReceiver, uint256 _tokenId){
+        function transferStar(address addressReceiver, uint256 _tokenId) public  {
         
         address sender = ownerOf(_tokenId);
-       _removeTokenFrom(sender, _tokenId);
+        _removeTokenFrom(sender, _tokenId);
         _addTokenTo(addressReceiver, _tokenId);
         // _removeTokenFrom(sender, addressReceiver, _tokenId);
 
         }
     }
+ 

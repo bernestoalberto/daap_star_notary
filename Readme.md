@@ -15,14 +15,13 @@ The Smart contrat was deploy it on the public testnet!
 •Contain required function
 •The project was build  with Zeppelin.
 
-Your ERC-721 Token Name
-Your ERC-721 Token Symbol
-Your “Token Address” on the rinkeby Network
-#deployment to the Rinkeby Network
-tx: 0x5218e0bbac7ed63c894037c39f0717eacb1e21203c4cf51df13e6390be4c128a
+# Deployment to the Rinkeby Network
+• Token Name - ErnestoBMToken
+• Symbol - EBM
 
-StarNotary : 0x553ffd0f902c001950d7d3a04dd9a952880b262b
+• StarNotary : 0xC12c734fE38D6Ba8e80fe92a0F2134b78aB0182b  
+•  Token Address: 
 
-tx: 0x07bb697f76fedbaf879064c0b5d331e5402a51436b0d9425a369ad5fb3d3f8d1
+• TxHash: 0xd824b5fbd1d11ccc8875048dc2c0dd5a7f60223e1a66405980335fc2c55ffe52
 
 
