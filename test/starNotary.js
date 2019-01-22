@@ -17,7 +17,7 @@ contract('StarNotary', async (accs) => {
 
 it('can Create a Star', async() => {
     let tokenId = 1;
-    instance.createStar.call('Pluton', 'dec', 'mag', 'cent', 'story', 'Pluton *.*.* ',tokenId)//, {from: accounts[0]})
+    instance.createStar.call('Pluton', 'dec', 'mag', 'cent', 'story', 'Pluton *.*.* ',tokenId,{from: accounts[0]})//,
         .then((result) => {
             // tokenId = result.toNumber();
             console.log('The token is', tokenId, result);
