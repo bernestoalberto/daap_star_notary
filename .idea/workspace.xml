@@ -1,40 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4813963-2065-40a8-bd1c-58541d64687c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/abi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/boostrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/boostrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/web3.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test error.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/truffle-config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/truffle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/scripts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/Address.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/Address.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/ERC165.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/ERC165.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/ERC721.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/ERC721.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/IERC165.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/IERC165.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/IERC721.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/IERC721.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/IERC721Receiver.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/IERC721Receiver.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/Migrations.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/Migrations.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/SafeMath.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/SafeMath.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/contracts/StarNotary.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/contracts/StarNotary.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contracts/StarNotary.sol" beforeDir="false" afterPath="$PROJECT_DIR$/contracts/StarNotary.sol" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/starNotary.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/starNotary.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
-    </list>
+    <list default="true" id="d4813963-2065-40a8-bd1c-58541d64687c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +13,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/starNotary.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+            <state relative-caret-position="391">
+              <caret line="53" column="68" selection-start-line="53" selection-start-column="68" selection-end-line="53" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -68,6 +35,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/truffle.js" />
+        <option value="$PROJECT_DIR$/test/StarNotary.js" />
         <option value="$PROJECT_DIR$/test/starNotary.js" />
       </list>
     </option>
@@ -131,7 +99,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/truffle.js" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547667871574" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548199312506" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -163,18 +131,18 @@
       <updated>1547658022447</updated>
       <workItem from="1547658036576" duration="2271000" />
       <workItem from="1547676866881" duration="215000" />
-      <workItem from="1548198499361" duration="599000" />
+      <workItem from="1548198499361" duration="809000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3085000" />
+    <option name="totallyTimeSpent" value="3295000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1608" y="-8" width="1616" height="916" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25578406" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25578406" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -190,7 +158,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32876712" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32876712" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
@@ -241,8 +209,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/starNotary.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        <state relative-caret-position="391">
+          <caret line="53" column="68" selection-start-line="53" selection-start-column="68" selection-end-line="53" selection-end-column="68" />
         </state>
       </provider>
     </entry>
