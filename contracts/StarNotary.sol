@@ -79,15 +79,18 @@ contract StarNotary is ERC721 {
     * @param  _tokenId1
     **
     */
-        function exchangeStars(uint256 _tokenId, uint256 _tokenId1)public  {
+        function exchangeStars(uint256 _tokenId, uint256 _tokenId1) public {
             address owner = ownerOf(_tokenId);
             address owner1 = ownerOf(_tokenId1);
             
             _removeTokenFrom(owner, _tokenId);
             _removeTokenFrom(owner1, _tokenId1);
 
-            _addTokenTo(owner, _tokenId1);
-            _addTokenTo(owner1, _tokenId);
+            // _addTokenTo(owner, _tokenId1);
+            // _addTokenTo(owner1, _tokenId);
+
+        transferFrom(owner, owner1, _tokenId);
+        transferFrom(owner1, owner, _tokenId1);
 
         }
     /*

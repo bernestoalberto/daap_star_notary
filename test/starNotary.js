@@ -1,4 +1,4 @@
-import 'babel-polyfill';
+// import 'babel-polyfill' from ;
 const StarNotary = artifacts.require('../contracts/StarNotary.sol')
   // Write Tests for:
 
@@ -39,9 +39,10 @@ contract('StarNotary', async (accs) => {
     let na = 'Pluton';
     let  ra = "16h 29m 1.0s";
     let dec = "68° 52' 56.9";
-    let mag = "4.83";
+    let mag = 4;
     let cent = "";
     let story = "Found star using https://www.google.com/sky/";
+    await instance.approve.call(owner1);
     await instance.createStar.call(na, ra, dec,  mag,  cent,  story,tokenId1, {from: user1});
     await instance.exchangeStars.call(tokenId, tokenId1)
     assert.equal(await instance.ownerOf.call(tokenId),owner1 )

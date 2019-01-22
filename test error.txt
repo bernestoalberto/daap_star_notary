@@ -1,0 +1,24 @@
+ 2 users can exchange their stars:                                                                                
+     Error: Invalid number of arguments to Solidity function                                                         
+      at Object.InvalidNumberOfSolidityArgs (/usr/lib/node_modules/truffle/build/webpack:/~/web3/lib/web3/errors.js:25
+:1)                                                                                                                   
+      at SolidityFunction.validateArgs (/usr/lib/node_modules/truffle/build/webpack:/~/web3/lib/web3/function.js:74:1) 
+      at SolidityFunction.toPayload (/usr/lib/node_modules/truffle/build/webpack:/~/web3/lib/web3/function.js:90:1)     
+	  at SolidityFunction.call (/usr/lib/node_modules/truffle/build/webpack:/~/web3/lib/web3/function.js:131:1)       
+      at /usr/lib/node_modules/truffle/build/webpack:/packages/truffle-contract/contract.js:135:1                    
+      at new Promise (<anonymous>)                                                                                   
+      at /usr/lib/node_modules/truffle/build/webpack:/packages/truffle-contract/contract.js:126:1                     
+                                                                                                                      
+  2) Stars Tokens can be transferred from one address to another.:                                                    
+     Uncaught Error: VM Exception while processing transaction: revert                                                
+      at Object.InvalidResponse (/usr/lib/node_modules/truffle/build/webpack:/~/web3/lib/web3/errors.js:38:1)         
+      at /usr/lib/node_modules/truffle/build/webpack:/~/web3/lib/web3/requestmanager.js:86:1                          
+      at /usr/lib/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:134:1                      
+      at XMLHttpRequest.request.onreadystatechange (/usr/lib/node_modules/truffle/build/webpack:/~/web3/lib/web3/httppxrovider.js:128:1)                                                                                                     
+      at XMLHttpRequestEventTarget.dispatchEvent (/usr/lib/node_modules/truffle/build/webpack:/~/xhr2/lib/xhr2.js:64:1                                                                                                                     
+      at XMLHttpRequest._setReadyState (/usr/lib/node_modules/truffle/build/webpack:/~/xhr2/lib/xhr2.js:354:1)        
+      at XMLHttpRequest._onHttpResponseEnd (/usr/lib/node_modules/truffle/build/webpack:/~/xhr2/lib/xhr2.js:509:1)    
+      at IncomingMessage.<anonymous> (/usr/lib/node_modules/truffle/build/webpack:/~/xhr2/lib/xhr2.js:469:1)         
+      at endReadableNT (_stream_readable.js:1094:12)                                                                  
+      at process._tickCallback (internal/process/next_tick.js:63:19)                                                  
+                                                                    
