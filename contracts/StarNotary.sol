@@ -1,36 +1,35 @@
 pragma solidity ^0.4.24;
 import "openzeppelin-solidity/contracts/token/ERC721/ERC721.sol";
 
-    contract StarNotary is ERC721 { 
+contract StarNotary is ERC721 { 
 
-        struct Star { 
-            string named; 
-            string ra;
-            string dec;
-            string mag;
-            string cen;
-            string story;
-   
+    struct Star { 
+        string named; 
+        string ra;
+        string dec;
+        string mag;
+        string cen;
+        string story;
         }
        
-       string public constant  name =  "ErnestoBM Token";
-       string public constant  symbol = "EBM";
+       string public constant  NAME =  "ErnestoBM Token";
+       string public constant  SYMBOL = "EBM";
 
         mapping (uint256 => Star) public tokenIdToStarInfo; 
         mapping (uint256 => uint256) public starsForSale;
 
-        function createStar(string na, string ra, string dec, string mag, string cent, string story, uint256 _tokenId) public {
-        Star memory newStar = Star(na, ra, dec, mag, cent, story);
+        function createStar(string _name, string _ra, string _dec, string _mag, string _cent, string _story, uint256 _tokenId) public {
+        Star memory newStar = Star(_name, _ra, _dec, _mag, _cent, _story);
         tokenIdToStarInfo[_tokenId] = newStar;
         _mint(msg.sender, _tokenId);
         }
 
         function getTokenName() public pure  returns(string ) {
-        return name;
+        return NAME;
         }
 
          function getSymbolName() public pure returns (string ) {
-         return symbol;
+         return SYMBOL;
         }
 
   

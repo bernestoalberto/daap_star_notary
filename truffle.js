@@ -1,7 +1,7 @@
 let HDWalletProvider = require("truffle-hdwallet-provider");
 
  let mnemonic ="crater close lunar fitness uphold glue morning resemble suspect cigar front roast";
-let account = "0x6D6BeF8E67a4D106F3f6b686De4004d486Eb1D62";
+let account = "0x7311bd9c8e5a3d46f3d36d8e99820682335fb949";
 
 // console.log(providerk);
  // See <http://truffleframework.com/docs/advanced/configuration>
