@@ -1,5 +1,5 @@
 // import 'babel-polyfill';
-const StarNotary = artifacts.require('../contracts/StarNotary.sol')
+const StarNotary = artifacts.require('../contracts/StarNotary.sol');
   // Write Tests for:
 
 // 1) The token name and token symbol are added properly.
@@ -26,16 +26,16 @@ contract('StarNotary', async (accs) => {
     });
   });
   it('has a correct name and token symbol are added properly.', async() => {
-    let name = 'ErnestoBMToken'; 
-    let symbol = 'EBM'; 
-    assert.equal( await instance.getTokenName(), name)
-    assert.equal( await instance.getTokenName(), symbol)
+    let name = 'ErnestoBMToken';
+    let symbol = 'EBM';
+    assert.equal( await instance.getTokenName(), name);
+    assert.equal( await instance.getTokenName(), symbol);
   });
   it('2 users can exchange their stars',async ()=>{
     let tokenId= 1;
     let tokenId1 = 2;
     let owner1 = instance.ownerOf(tokenId1);
-    await instance.exchangeStars(tokenId, tokenId1)
+    await instance.exchangeStars(tokenId, tokenId1);
     assert.equal(await instance.ownerOf.call(tokenId),owner1 )
   });
 
