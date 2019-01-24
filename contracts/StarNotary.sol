@@ -7,8 +7,8 @@ contract StarNotary is ERC721 {
         string named; 
         string ra;
         string dec;
-        string mag;
-        string cen;
+        uint8 mag;
+        uint8 cent;
         string story;
         }
        
@@ -18,17 +18,17 @@ contract StarNotary is ERC721 {
         mapping (uint256 => Star) public tokenIdToStarInfo; 
         mapping (uint256 => uint256) public starsForSale;
 
-        function createStar(string _name, string _ra, string _dec, string _mag, string _cent, string _story, uint256 _tokenId) public {
+        function createStar(string _name, string _ra, string _dec, uint8 _mag, uint8 _cent, string _story, uint256 _tokenId) public {
         Star memory newStar = Star(_name, _ra, _dec, _mag, _cent, _story);
         tokenIdToStarInfo[_tokenId] = newStar;
         _mint(msg.sender, _tokenId);
         }
 
-        function getTokenName() public pure  returns(string ) {
+        function getTokenName() public  pure  returns(string ) {
         return NAME;
         }
 
-         function getSymbolName() public pure returns (string ) {
+         function getSymbolName() public  pure returns (string ) {
          return SYMBOL;
         }
 
@@ -82,15 +82,12 @@ contract StarNotary is ERC721 {
         function exchangeStars(uint256 _tokenId, uint256 _tokenId1) public {
             address owner = ownerOf(_tokenId);
             address owner1 = ownerOf(_tokenId1);
-            
-            _removeTokenFrom(owner, _tokenId);
-            _removeTokenFrom(owner1, _tokenId1);
-
-            // _addTokenTo(owner, _tokenId1);
-            // _addTokenTo(owner1, _tokenId);
-
-        transferFrom(owner, owner1, _tokenId);
-        transferFrom(owner1, owner, _tokenId1);
+        
+        //   _removeTokenFrom(owner, _tokenId);
+        //  _removeTokenFrom(owner1, _tokenId1);
+        
+         transferFrom(owner, owner1, _tokenId);
+         transferFrom(owner1, owner, _tokenId1);
 
         }
     /*
@@ -103,8 +100,10 @@ contract StarNotary is ERC721 {
         function transferStar(address addressReceiver, uint256 _tokenId) public  {
         
         address sender = ownerOf(_tokenId);
-        _removeTokenFrom(sender, _tokenId);
-        _addTokenTo(addressReceiver, _tokenId);
+        // _removeTokenFrom(sender, _tokenId);
+          transferFrom(sender, addressReceiver, _tokenId);
+
+        // _addTokenTo(addressReceiver, _tokenId);
         // _removeTokenFrom(sender, addressReceiver, _tokenId);
 
         }
