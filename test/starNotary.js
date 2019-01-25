@@ -52,8 +52,8 @@ let cent = 63;
 let cent1 = 65;
 let story = "Found star using https://www.google.com/sky/";
 let story1 = "Found star using https://www.google.com/neptuno/";
-await instance.createStar(na, ra, dec,  mag,  cent,  story,starId1 ,{from: user1});
-await instance.createStar(na1, ra1, dec1,  mag1,  cent1,  story1, starId2,{from: address2});
+await instance.createStar.call(na, ra, dec,  mag,  cent,  story,starId1 ,{from: address1});
+await instance.createStar.call(na1, ra1, dec1,  mag1,  cent1,  story1, starId2,{from: address2});
 await instance.approve(address1, starId2,{from: address2});
 await instance.exchangeStars.call(starId1, starId2, {from:address1});
 assert.equal(await instance.ownerOf.call(tokenId1),address2 );
@@ -63,10 +63,11 @@ assert.equal(await instance.ownerOf.call(tokenId2),address1 );
 //Code execution fails at some require() or (caller must be owner or authorized users), insufficient eth sent.
 
 it('Stars Tokens can be transferred from one address to another.',async ()=>{
-let receiver = accounts[6];
+let sender = accounts[6];
+let receiver = accounts[7];
 let token = 6;
-await instance.approve(token);
-await instance.transferStar(receiver,token, {from:receiver});
+await instance.approve(sender,token,{from:receiver});
+await instance.transferStar.call(sender,token, {from:receiver});
 assert.equal(await instance.ownerOf.call(token), receiver)
 });
 
