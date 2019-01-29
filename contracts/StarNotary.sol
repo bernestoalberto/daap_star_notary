@@ -38,10 +38,11 @@ contract StarNotary is ERC721 {
 
             starOwner.transfer(starCost);
 
-            if(msg.value > starCost) {
+            if(msg.value > sWtarCost) {
                 msg.sender.transfer(msg.value - starCost);
             }
         }
+    }
 
     /*
     *
