@@ -19,7 +19,8 @@ The Smart contrat was deploy it on the public testnet!
 • Token Name - ErnestoBMToken
 • Symbol - EBM
 
-• StarNotary : 0xC12c734fE38D6Ba8e80fe92a0F2134b78aB0182b  
+• StarNotary : 0x868d3BEC719A2aB1f768F86EC6e633648312dEd2    
+              
 •  Token Address: 
 
 • TxHash: 0xd824b5fbd1d11ccc8875048dc2c0dd5a7f60223e1a66405980335fc2c55ffe52
