@@ -35,20 +35,17 @@ it('2 users can exchange their stars',async ()=>{
 
 let starId1 = 2;
 let starId2 = 3;
-let address1 = accounts[3];
-let address2 = accounts[4];
+// let address1 = accounts[2];
+let address2 = accounts[3];
 
   // 1. Create 2 Stars
-await instance.createStar("Pluton",starId1,{from: address1});
+await instance.createStar("Mercury",starId1,{from: owner});
 await instance.createStar("Neptuno",starId2,{from: address2});
 // 2. Call the exchangeStars functions implemented in the Smart Contract
-await instance.approve.call(address2, starId1,{from: address1});
-await instance.exchangeStars(starId1, starId2, {from:address1});
-assert.equal(await instance.ownerOf(starId2),address1 );
+await instance.approve.call(address2, starId1,{from: owner});
+await instance.exchangeStars(starId1, starId2, {from:owner});
 // 3. Verify that the owners changed
-await instance.approve.call(address1, starId2,{from: address2});
-await instance.exchangeStars(starId2, starId1, {from:address2});
-assert.equal(await instance.ownerOf(starId1),address2 );
+assert.equal(await instance.ownerOf.call(starId2),owner );
 });
 
 
@@ -59,7 +56,7 @@ it('Stars Tokens can be transferred from one address to another.',async ()=>{
     let receiver = accounts[7];
     let token = 4;
      // 1. create a Star
-    await instance.createStar("Pluton",token,{from: owner});
+    await instance.createStar("Earth",token,{from: owner});
     await instance.approve.call(receiver,token,{from:owner});
        
     // 2. use the transferStar function implemented in the Smart Contract
