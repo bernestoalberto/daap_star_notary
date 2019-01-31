@@ -16,10 +16,11 @@ The Smart contrat was deploy it on the public testnet!
 •The project was build  with Zeppelin.
 
 # Deployment to the Rinkeby Network
-• Token Name - ErnestoBMToken
+• Token Name - ErnestoBM Token
 • Symbol - EBM
 
-• StarNotary : 0x868d3BEC719A2aB1f768F86EC6e633648312dEd2    
+• StarNotary : 0x868d3BEC719A2aB1f768F86EC6e633648312dEd2   
+              :0xf8166dd69a3eec50a5f240a70b7107f57f966970 
               
 •  Token Address: 
 

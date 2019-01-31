@@ -71,7 +71,6 @@ contract StarNotary is ERC721 {
             address owner1 = ownerOf(_tokenId1);
 
          transferFrom(owner, owner1, _tokenId);
-         transferFrom(owner1, owner, _tokenId1);
 
         }
     /*
