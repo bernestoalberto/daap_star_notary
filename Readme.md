@@ -16,14 +16,13 @@ The Smart contrat was deploy it on the public testnet!
 •The project was build  with Zeppelin.
 
 # Deployment to the Rinkeby Network
-• Token Name - ErnestoBM Token
-• Symbol - EBM
-
-• StarNotary : 0x868d3BEC719A2aB1f768F86EC6e633648312dEd2   
-              :0xf8166dd69a3eec50a5f240a70b7107f57f966970 
-              
+•  ERC-721 Token Name - EbmToken
+•   ERC-721 Symbol - EBM
+•   Truffle  ^4.1.15,
+•   OpenZeppelin : ^2.0.0
+•Migrations: 0x449a4f180f22B16f400EBe1CA332e9AB289910B4  
+• StarNotary : 0x06007b2F627ACC51323c7CC46EcfAe5a74B5fF50     
 •  Token Address: 
-
-• TxHash: 0xd824b5fbd1d11ccc8875048dc2c0dd5a7f60223e1a66405980335fc2c55ffe52
+• TxHash: 
 
 

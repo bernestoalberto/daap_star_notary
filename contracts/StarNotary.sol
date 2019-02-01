@@ -7,7 +7,7 @@ contract StarNotary is ERC721 {
         string name;
         }
 
-       string public constant  NAME =  "ErnestoBM Token";
+       string public constant  NAME =  "EbmToken";
        string public constant  SYMBOL = "EBM";
 
         mapping (uint256 => Star) public tokenIdToStarInfo;
@@ -54,9 +54,7 @@ contract StarNotary is ERC721 {
     */
 
     function lookUptokenIdToStarInfo(uint256 _tokenId) public view returns(string) {
-        require(ownerOf(_tokenId) == msg.sender);
-        string storage nam = tokenIdToStarInfo[_tokenId].name;
-        return nam;
+        return tokenIdToStarInfo[_tokenId].name;
     }
 
 
@@ -71,6 +69,7 @@ contract StarNotary is ERC721 {
             address owner1 = ownerOf(_tokenId1);
 
          transferFrom(owner, owner1, _tokenId);
+         transferFrom(owner1, owner, _tokenId1);
 
         }
     /*

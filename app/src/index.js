@@ -71,7 +71,7 @@ claimStarFunc: async function(){
     const {lookUptokenIdToStarInfo } = this.meta.methods;
     let starId = document.getElementById("lookid").value;
     if(starId){
-      let starName = await lookUptokenIdToStarInfo(starId);
+      let starName = await lookUptokenIdToStarInfo(starId).call({from:this.account});
       App.setStatus(`The Star Name is ${starName}`);
     }
   }
