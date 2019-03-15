@@ -278,9 +278,9 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.4.24;\n\nimport \"../../introspection/IERC165.sol\";\n\n/**\n * @title ERC721 Non-Fungible Token Standard basic interface\n * @dev see https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md\n */\ncontract IERC721 is IERC165 {\n\n  event Transfer(\n    address indexed from,\n    address indexed to,\n    uint256 indexed tokenId\n  );\n  event Approval(\n    address indexed owner,\n    address indexed approved,\n    uint256 indexed tokenId\n  );\n  event ApprovalForAll(\n    address indexed owner,\n    address indexed operator,\n    bool approved\n  );\n\n  function balanceOf(address owner) public view returns (uint256 balance);\n  function ownerOf(uint256 tokenId) public view returns (address owner);\n\n  function approve(address to, uint256 tokenId) public;\n  function getApproved(uint256 tokenId)\n    public view returns (address operator);\n\n  function setApprovalForAll(address operator, bool _approved) public;\n  function isApprovedForAll(address owner, address operator)\n    public view returns (bool);\n\n  function transferFrom(address from, address to, uint256 tokenId) public;\n  function safeTransferFrom(address from, address to, uint256 tokenId)\n    public;\n\n  function safeTransferFrom(\n    address from,\n    address to,\n    uint256 tokenId,\n    bytes data\n  )\n    public;\n}\n",
-  "sourcePath": "/home/ebonet/www/daap_star_notary/node_modules/openzeppelin-solidity/contracts/token/ERC721/IERC721.sol",
+  "sourcePath": "D:\\repo\\daap_star_notary\\node_modules\\openzeppelin-solidity\\contracts\\token\\ERC721\\IERC721.sol",
   "ast": {
-    "absolutePath": "/home/ebonet/www/daap_star_notary/node_modules/openzeppelin-solidity/contracts/token/ERC721/IERC721.sol",
+    "absolutePath": "/D/repo/daap_star_notary/node_modules/openzeppelin-solidity/contracts/token/ERC721/IERC721.sol",
     "exportedSymbols": {
       "IERC721": [
         1116
@@ -301,7 +301,7 @@
         "src": "0:24:6"
       },
       {
-        "absolutePath": "/home/ebonet/www/daap_star_notary/node_modules/openzeppelin-solidity/contracts/introspection/IERC165.sol",
+        "absolutePath": "/D/repo/daap_star_notary/node_modules/openzeppelin-solidity/contracts/introspection/IERC165.sol",
         "file": "../../introspection/IERC165.sol",
         "id": 1016,
         "nodeType": "ImportDirective",
@@ -1514,7 +1514,7 @@
     "src": "0:1287:6"
   },
   "legacyAST": {
-    "absolutePath": "/home/ebonet/www/daap_star_notary/node_modules/openzeppelin-solidity/contracts/token/ERC721/IERC721.sol",
+    "absolutePath": "/D/repo/daap_star_notary/node_modules/openzeppelin-solidity/contracts/token/ERC721/IERC721.sol",
     "exportedSymbols": {
       "IERC721": [
         1116
@@ -1535,7 +1535,7 @@
         "src": "0:24:6"
       },
       {
-        "absolutePath": "/home/ebonet/www/daap_star_notary/node_modules/openzeppelin-solidity/contracts/introspection/IERC165.sol",
+        "absolutePath": "/D/repo/daap_star_notary/node_modules/openzeppelin-solidity/contracts/introspection/IERC165.sol",
         "file": "../../introspection/IERC165.sol",
         "id": 1016,
         "nodeType": "ImportDirective",
@@ -2749,9 +2749,9 @@
   },
   "compiler": {
     "name": "solc",
-    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+    "version": "0.4.25+commit.59dbf8f1.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "2.0.1",
-  "updatedAt": "2019-02-01T01:00:48.497Z"
+  "schemaVersion": "2.0.2",
+  "updatedAt": "2019-02-28T15:31:50.614Z"
 }
