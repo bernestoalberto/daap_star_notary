@@ -1,5 +1,5 @@
 // import 'babel-polyfill' from ;
-var artifacts = require("truffle-artifactor");
+//var artifacts = require("truffle-artifactor");
 const StarNotary = artifacts.require('../contracts/StarNotary.sol');
 // Write Tests for:
 

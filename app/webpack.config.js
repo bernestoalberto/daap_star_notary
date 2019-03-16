@@ -7,6 +7,7 @@ module.exports = {
     filename: "index.js",
     path: path.resolve(__dirname, "dist"),
   },
+  mode: 'development',
   plugins: [
     new CopyWebpackPlugin([{ from: "./src/index.html", to: "index.html" }]),
   ],

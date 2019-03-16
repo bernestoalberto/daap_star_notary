@@ -12,10 +12,10 @@ const App = {
     try {
       // get contract instance
       const networkId = await web3.eth.net.getId();
-      console.log('nETWORKiD'+ networkId);
-      console.log('ABI'+ starNotaryArtifact.abi);      
+      console.log('NetworkID '+ networkId);
+      console.log('ABI '+ starNotaryArtifact.abi);      
       const deployedNetwork = starNotaryArtifact.networks[networkId];
-      console.log('Address'+ deployedNetwork.address);      
+      console.log('Address '+ deployedNetwork.address);      
       this.meta = new web3.eth.Contract(
         starNotaryArtifact.abi,
         deployedNetwork.address,
